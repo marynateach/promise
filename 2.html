@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let promise = new Promise((resolve, reject) => {
+            let randNum = Math.floor(Math.random() * 10); // 0 to 10
+            console.log(randNum);
+            if(randNum % 2 == 0) {
+                resolve(" чётное!");
+            }
+            else if(randNum === 0) {
+                reject("Число равно 0");
+            }
+            else {
+                reject("Число нечётное!");
+            }
+        })
+
+        promise.then(
+            result => console.log("Число" + result)
+        ).catch(
+            error => console.log(error)
+        )
+    </script>
+</body>
+</html>
